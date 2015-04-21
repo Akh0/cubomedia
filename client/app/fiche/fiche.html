@@ -1,0 +1,43 @@
+<div class="actions">
+    <!--Suggérer-->
+    <a class="download" href="/api/downloads/{{ fiche._id }}" title="Télécharger" target="_blank">
+        <img src="/assets/images/download.png" width="64" alt="Télécharger"/>
+    </a>
+    <a class="allocine" href="{{ fiche.link }}" target="_blank">
+        <img src="/assets/images/logo-allocine-black.png" alt="Logo allociné" width="90"/>
+    </a>
+</div>
+
+<h1 class="title">{{ fiche.title }}</h1>
+<h2 class="originalTitle" ng-show="fiche.originalTitle">[ {{ fiche.originalTitle }} ]</h2>
+
+
+<div class="pictures">
+    <img ng-repeat="poster in fiche.posters | limitTo: 8" src="{{ poster.href }}" alt="" height="120"
+         ng-class="{ current: $first }" poster-replace/>
+    <!--<img src="/assets/images/film-hobbit-affiche.jpg" alt="" height="120" class="current"/>-->
+</div>
+
+<div>
+    <div class="mainPicture">
+        <img src="{{ fiche.posters[0].href }}" alt="" width="380"/>
+    </div>
+    <div class="details">
+        <p class="legend inline">Note presse : <span class="value">{{ fiche.pressRating | number: 1 }} / 5</span></p>
+
+        <p class="legend inline">Note spectateurs : <span class="value">{{ fiche.userRating | number: 1 }} / 5</span>
+        </p>
+
+        <p class="legend inline">Genre : <span class="value">{{ fiche.genre }}</span></p>
+
+        <p class="legend">Synopsis</p>
+
+        <p ng-bind-html="fiche.synopsis"></p>
+
+        <p class="legend">Bande-annonce</p>
+
+        <iframe class="video-trailer" ng-src="{{ embedTrailerSrc }}"
+                frameborder="0" allowfullscreen="true"></iframe>
+    </div>
+</div>
+<div class="clear"></div>
