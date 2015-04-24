@@ -1,156 +1,21 @@
-<div id="lastConsults" class="homeSection">
-    <h2><a ui-sref="main.categorie({ id: 1 })">Films</a></h2>
+<div class="homeSection">
+    <h2><a ui-sref="main.categorie({ category: 'movie' })">Films</a></h2>
 
     <div ng-repeat="fiche in fichesFilm" class="thumbFiche">
         <a ui-sref="main.fiche({ id: fiche._id })">
             <img src="{{ fiche.posterHref }}" alt="" height="150"/>
         </a>
     </div>
+</div>
 
-    <div class="clear"></div>
-
-    <h2><a ui-sref="main.categorie({ id: 2 })">Séries</a></h2>
+<div class="homeSection">
+    <h2><a ui-sref="main.categorie({ category: 'tvseries' })">Séries</a></h2>
 
     <div ng-repeat="fiche in fichesSerie" class="thumbFiche">
         <a ui-sref="main.fiche({ id: fiche._id })">
             <img src="{{ fiche.posterHref }}" alt="" height="150"/>
         </a>
     </div>
-
-    <div class="clear"></div>
-
-    <!--<div class="lastConsult">-->
-        <!--<a ui-sref="main.fiche({ id: 1})">-->
-            <!--<img src="/assets/images/film-hobbit-affiche.jpg" alt="" height="150"/>-->
-        <!--</a>-->
-    <!--</div>-->
-    <!--<div class="lastConsult">-->
-        <!--<a href="">-->
-            <!--<img src="/assets/images/film-insaisissable-affiche.jpg" alt="" height="150"/>-->
-        <!--</a>-->
-    <!--</div>-->
-    <!--<div class="lastConsult">-->
-        <!--<a href="">-->
-            <!--<img src="/assets/images/film-la-cite-des-hommes-affiche.jpg" alt="" height="150"/>-->
-        <!--</a>-->
-    <!--</div>-->
-    <!--<div class="lastConsult">-->
-        <!--<a href="">-->
-            <!--<img src="/assets/images/film-le-grand-mechant-loup-affiche.jpg" alt="" height="150"/>-->
-        <!--</a>-->
-    <!--</div>-->
-    <!--<div class="lastConsult">-->
-        <!--<a href="">-->
-            <!--<img src="/assets/images/film-hobbit-affiche.jpg" alt="" height="150"/>-->
-        <!--</a>-->
-    <!--</div>-->
-    <!--<div class="lastConsult">-->
-        <!--<a href="">-->
-            <!--<img src="/assets/images/film-insaisissable-affiche.jpg" alt="" height="150"/>-->
-        <!--</a>-->
-    <!--</div>-->
-    <!--<div class="lastConsult">-->
-        <!--<a href="">-->
-            <!--<img src="/assets/images/film-la-cite-des-hommes-affiche.jpg" alt="" height="150"/>-->
-        <!--</a>-->
-    <!--</div>-->
-    <!--<div class="lastConsult">-->
-        <!--<a href="">-->
-            <!--<img src="/assets/images/film-le-grand-mechant-loup-affiche.jpg" alt="" height="150"/>-->
-        <!--</a>-->
-    <!--</div>-->
 </div>
-<!--<div id="suggestions" class="homeSection">-->
-    <!--<h2>Suggestions</h2>-->
 
-    <!--<div class="suggestion">-->
-        <!--<span class="by">Par <strong>PleoX</strong></span>-->
-        <!--<a href="">-->
-            <!--<img src="/assets/images/film-le-grand-mechant-loup-affiche.jpg" alt="" height="150"/>-->
-        <!--</a>-->
-    <!--</div>-->
-    <!--<div class="suggestion">-->
-        <!--<span class="by">Par <strong>achille</strong></span>-->
-        <!--<a href="">-->
-            <!--<img src="/assets/images/film-hobbit-affiche.jpg" alt="" height="150"/>-->
-        <!--</a>-->
-    <!--</div>-->
-    <!--<div class="suggestion">-->
-        <!--<span class="by">Par <strong>bglacial</strong></span>-->
-        <!--<a href="">-->
-            <!--<img src="/assets/images/film-la-cite-des-hommes-affiche.jpg" alt="" height="150"/>-->
-        <!--</a>-->
-    <!--</div>-->
-    <!--<div class="suggestion">-->
-        <!--<span class="by">Par <strong>PleoX</strong></span>-->
-        <!--<a href="">-->
-            <!--<img src="/assets/images/film-insaisissable-affiche.jpg" alt="" height="150"/>-->
-        <!--</a>-->
-    <!--</div>-->
-
-<!--</div>-->
-<!--<div id="categories" class="homeSection">-->
-    <!--<h2>Catégories</h2>-->
-
-    <!--<div class="categorie">-->
-        <!--<a href="/1080p.html">-->
-            <!--Film 1080p-->
-            <!--&lt;!&ndash;<img src="img/categories/1080p.png" alt="1080p"/>&ndash;&gt;-->
-        <!--</a>-->
-    <!--</div>-->
-    <!--<div class="categorie">-->
-        <!--<a href="/720p.html">-->
-            <!--Film 720p-->
-            <!--&lt;!&ndash;<img src="img/categories/720p.png" alt="720p"/>&ndash;&gt;-->
-        <!--</a>-->
-    <!--</div>-->
-    <!--<div class="categorie">-->
-        <!--<a href="/divx.html">-->
-            <!--Film DivX-->
-            <!--&lt;!&ndash;<img src="img/categories/divx.png" alt="divx"/>&ndash;&gt;-->
-        <!--</a>-->
-    <!--</div>-->
-    <!--<div class="categorie">-->
-        <!--<a href="/docs.html">-->
-            <!--Documentaire-->
-            <!--&lt;!&ndash;<img src="img/categories/docs.png" alt="docs"/>&ndash;&gt;-->
-        <!--</a>-->
-    <!--</div>-->
-    <!--<div class="categorie">-->
-        <!--<a href="/serie.html">-->
-            <!--Série-->
-            <!--&lt;!&ndash;<img src="img/categories/serie.png" alt="serie"/>&ndash;&gt;-->
-        <!--</a>-->
-    <!--</div>-->
-    <!--<div class="categorie">-->
-        <!--<a href="/music.html">-->
-            <!--Musique-->
-            <!--&lt;!&ndash;<img src="img/categories/music.png" alt="music"/>&ndash;&gt;-->
-        <!--</a>-->
-    <!--</div>-->
-    <!--<div class="categorie">-->
-        <!--<a href="/game.html">-->
-            <!--Jeux PC-->
-            <!--&lt;!&ndash;<img src="img/categories/game.png" alt="game"/>&ndash;&gt;-->
-        <!--</a>-->
-    <!--</div>-->
-    <!--<div class="categorie">-->
-        <!--<a href="/ps3.html">-->
-            <!--Jeux PS3-->
-            <!--&lt;!&ndash;<img src="img/categories/ps3.png" alt="ps3"/>&ndash;&gt;-->
-        <!--</a>-->
-    <!--</div>-->
-    <!--<div class="categorie">-->
-        <!--<a href="/xbox.html">-->
-            <!--Jeux Xbox-->
-            <!--&lt;!&ndash;<img src="img/categories/xbox.png" alt="xbox"/>&ndash;&gt;-->
-        <!--</a>-->
-    <!--</div>-->
-    <!--<div class="categorie">-->
-        <!--<a href="/soft.html">-->
-            <!--Logiciel-->
-            <!--&lt;!&ndash;<img src="img/categories/soft.png" alt="soft"/>&ndash;&gt;-->
-        <!--</a>-->
-    <!--</div>-->
-    <!--<div class="clear"></div>-->
-<!--</div>-->
+<div class="clear"></div>

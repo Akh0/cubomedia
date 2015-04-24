@@ -86,5 +86,13 @@
     "test": "grunt test",
     "update-webdriver": "node node_modules/grunt-protractor-runner/node_modules/protractor/bin/webdriver-manager update"
   },
-  "private": true
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Akh0/cubomedia.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Akh0/cubomedia/issues"
+  },
+  "homepage": "https://github.com/Akh0/cubomedia#readme"
 }
