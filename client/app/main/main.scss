@@ -162,10 +162,34 @@ img {
       text-align: center;
       font-size: 14px;
     }
+
+    .episode-links {
+      margin: 40px 30px 20px 30px;
+      border-top: 1px dashed #d2d8ba;
+      text-align: center;
+      .season {
+        margin-top: 15px;
+        display: inline-block;
+        width: 100px;
+        vertical-align: top;
+
+        h5 {
+          font-size: 14px;
+          margin: 0 0 8px 0;
+        }
+
+        .episode {
+          display: block;
+          font-size: 12px;
+          padding-bottom: 3px;
+        }
+      }
+    }
+
     .pictures {
       text-align: center;
       white-space: nowrap;
-      margin: 40px 30px 20px 30px;
+      margin: 30px 30px 20px 30px;
       padding: 10px;
       height: 125px;
       overflow: hidden;
@@ -226,7 +250,7 @@ img {
 
     .homeSection {
       float: left;
-//      margin-bottom: 20px;
+      //      margin-bottom: 20px;
       .thumbFiche {
         float: left;
         margin: 10px;

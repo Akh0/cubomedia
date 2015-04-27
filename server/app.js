@@ -11,8 +11,15 @@ var express = require('express');
 var mongoose = require('mongoose');
 var config = require('./config/environment');
 
+var cmModels = require('cubomedia-models');
+
 // Connect to database
-mongoose.connect(config.mongo.uri, config.mongo.options);
+cmModels.connect(config.mongo.uri, config.mongo.options);
+
+mongoose.connection.once('open', function () {
+    console.log('Connected to database!');
+});
+mongoose.connection.on('error', function(err) { console.log('Error:'+err)});
 
 // Populate DB with sample data
 if(config.seedDB) { require('./config/seed'); }

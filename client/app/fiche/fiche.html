@@ -1,6 +1,5 @@
 <div class="actions">
-    <!--Suggérer-->
-    <a class="download" href="/api/downloads/{{ fiche._id }}" title="Télécharger" target="_blank">
+    <a ng-if="!isSerie" class="download" href="/api/downloads/{{ fiche._id }}" title="Télécharger" target="_blank">
         <img src="/assets/images/download.png" width="64" alt="Télécharger"/>
     </a>
     <a class="allocine" href="{{ fiche.link }}" target="_blank">
@@ -11,16 +10,24 @@
 <h1 class="title">{{ fiche.title }}</h1>
 <h2 class="originalTitle" ng-show="fiche.originalTitle">[ {{ fiche.originalTitle }} ]</h2>
 
+<div ng-if="isSerie" class="episode-links">
+    <div ng-repeat="seasonNumber in seasonNumbers | orderBy" class="season">
+        <h5>Saison {{ seasonNumber }}</h5>
+        <a ng-repeat="episode in episodes | filter: { seasonNumber: seasonNumber } | orderBy: 'episodeNumber'" href="/api/downloads/{{ episode._id }}" target="_blank" class="episode" title="Télécharger">
+            Épisode {{ episode.episodeNumber }}
+        </a>
+    </div>
+</div>
 
 <div class="pictures">
-    <img ng-repeat="poster in fiche.posters | limitTo: 8" src="{{ poster.href }}" alt="" height="120"
+    <img ng-repeat="poster in fiche.posters | limitTo: 8" ng-src="{{ poster.href }}" alt="" height="120"
          ng-class="{ current: $first }" poster-replace/>
     <!--<img src="/assets/images/film-hobbit-affiche.jpg" alt="" height="120" class="current"/>-->
 </div>
 
 <div>
     <div class="mainPicture">
-        <img src="{{ fiche.posters[0].href }}" alt="" width="380"/>
+        <img ng-src="{{ fiche.posters[0].href }}" alt="" width="380"/>
     </div>
     <div class="details">
         <p class="legend inline">Note presse : <span class="value">{{ fiche.pressRating | number: 1 }} / 5</span></p>

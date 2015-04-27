@@ -1,19 +1,19 @@
 <div class="homeSection">
     <h2><a ui-sref="main.categorie({ category: 'movie' })">Films</a></h2>
 
-    <div ng-repeat="fiche in fichesFilm" class="thumbFiche">
-        <a ui-sref="main.fiche({ id: fiche._id })">
-            <img src="{{ fiche.posterHref }}" alt="" height="150"/>
+    <div ng-repeat="film in films" class="thumbFiche">
+        <a ui-sref="main.fiche({ id: film._id, type: 'movie' })">
+            <img ng-src="{{ film.posterHref }}" alt="" height="150"/>
         </a>
     </div>
 </div>
 
 <div class="homeSection">
-    <h2><a ui-sref="main.categorie({ category: 'tvseries' })">Séries</a></h2>
+    <h2><a ui-sref="main.categorie({ category: 'serie' })">Séries</a></h2>
 
-    <div ng-repeat="fiche in fichesSerie" class="thumbFiche">
-        <a ui-sref="main.fiche({ id: fiche._id })">
-            <img src="{{ fiche.posterHref }}" alt="" height="150"/>
+    <div ng-repeat="serie in series" class="thumbFiche">
+        <a ui-sref="main.fiche({ id: serie._id, type: 'serie' })">
+            <img ng-src="{{ serie.posterHref }}" alt="" height="150"/>
         </a>
     </div>
 </div>

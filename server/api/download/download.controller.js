@@ -2,7 +2,7 @@
 
 var _ = require('lodash'),
     fs = require('fs');
-var Fiche = require('../fiche/fiche.model');
+var File = require('cubomedia-models').File;
 
 //// Get list of downloads
 //exports.index = function(req, res) {
@@ -14,12 +14,12 @@ var Fiche = require('../fiche/fiche.model');
 
 // Get a single download
 exports.show = function(req, res) {
-  Fiche.findById(req.params.id, function (err, fiche) {
+    File.findById(req.params.id, function (err, file) {
     if(err) { return handleError(res, err); }
-    if(!fiche) { return res.send(404); }
+    if(!file) { return res.send(404); }
       //console.log(fiche);
       //console.log(fiche.filepath);
-        res.download(fiche.filepath);
+        res.download(file.filepath);
       //return res.json(fiche);
   });
 };
