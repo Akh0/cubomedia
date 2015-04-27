@@ -1,3 +1,7 @@
-<div class="col-md-12">
-This is the categorie view.
+<div class="homeSection">
+    <div ng-repeat="file in files" class="thumbFiche">
+        <a ui-sref="main.fiche({ id: file._id, type: (fiche._type ? 'movie' : 'serie') })">
+            <img ng-src="{{ file.posterHref }}" alt="" height="150"/>
+        </a>
+    </div>
 </div>

@@ -29,9 +29,19 @@ angular.module('cubomediaApp')
             }
         };
 
+        $scope.nbSeries = 0;
+        $scope.nbMovies = 0;
+
+        $http.get('/api/movies').success(function (movies) {
+            $scope.nbMovies = movies.length;
+        });
+
+        $http.get('/api/series').success(function (series) {
+            $scope.nbSeries = series.length;
+        });
 
 
-        //$scope.categories = [];
+            //$scope.categories = [];
 
         //$http.get('/api/categories').success(function (categories) {
         //    $scope.categories = categories;

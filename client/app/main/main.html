@@ -29,7 +29,10 @@
                 <a ng-repeat="fiche in fiches" ui-sref="main.fiche({ id: fiche._id })" ui-sref-active="active">{{
                     fiche.title }}</a>
             </div>
-            <!--<div id="menuCategories">-->
+
+            <div id="menuCategories">
+                <a ui-sref="main.categorie({ category: 'movie' })" ui-sref-active="active">Films <span>[{{ nbMovies }}]</span></a>
+                <a ui-sref="main.categorie({ category: 'serie' })" ui-sref-active="active">Séries <span>[{{ nbSeries }}]</span></a>
             <!--<a href="">Fredon <span>[9]</span></a>-->
             <!--<a href="">Tony <span>[16]</span></a>-->
             <!--<a href="">damibironn <span>[13]</span></a>-->
@@ -38,7 +41,7 @@
             <!--<a href="">achille <span>[11]</span></a>-->
             <!--<a href="">bglacial <span>[6]</span></a>-->
             <!--<a href="">tuxor <span>[3]</span></a>-->
-            <!--</div>-->
+            </div>
             <!--<div id="menuCategories">-->
             <!--<a ng-repeat="categorie in categories" ui-sref="main.categorie({ id: categorie.id })">{{ categorie.nom }} <span>[{{ categorie.nbItems }}]</span></a>-->
 
