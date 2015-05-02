@@ -10,13 +10,11 @@ module.exports = function(app) {
 
   // Insert routes below
   app.use('/api/episodes', require('./api/episode'));
-  //app.use('/api/trucs', require('./api/truc'));
   app.use('/api/files', require('./api/file'));
   app.use('/api/series', require('./api/serie'));
   app.use('/api/movies', require('./api/movie'));
   app.use('/api/auth', require('./api/auth'));
   app.use('/api/downloads', require('./api/download'));
-  app.use('/api/categories', require('./api/categorie'));
 
   // All undefined asset or api routes should return a 404
   app.route('/:url(api|auth|components|app|bower_components|assets)/*')
@@ -25,6 +23,6 @@ module.exports = function(app) {
   // All other routes should redirect to the index.html
   app.route('/*')
     .get(function(req, res) {
-      res.sendfile(app.get('appPath') + '/index.html');
+          res.sendfile(app.get('appPath') + '/index.html');
     });
 };

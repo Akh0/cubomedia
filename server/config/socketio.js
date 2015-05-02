@@ -18,15 +18,12 @@ function onConnect(socket) {
   });
 
   // Insert sockets below
-  require('../api/episode/episode.socket').register(socket);
-  require('../api/truc/truc.socket').register(socket);
-  require('../api/file/file.socket').register(socket);
-  require('../api/serie/serie.socket').register(socket);
-  require('../api/movie/movie.socket').register(socket);
-  require('../api/auth/auth.socket').register(socket);
-  require('../api/download/download.socket').register(socket);
-  require('../api/fiche/fiche.socket').register(socket);
-  require('../api/categorie/categorie.socket').register(socket);
+  //require('../api/episode/episode.socket').register(socket);
+  //require('../api/file/file.socket').register(socket);
+  //require('../api/serie/serie.socket').register(socket);
+  //require('../api/movie/movie.socket').register(socket);
+  //require('../api/auth/auth.socket').register(socket);
+  //require('../api/download/download.socket').register(socket);
 }
 
 module.exports = function (socketio) {

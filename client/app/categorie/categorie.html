@@ -1,7 +1,5 @@
 <div class="homeSection">
-    <div ng-repeat="file in files" class="thumbFiche">
-        <a ui-sref="main.fiche({ id: file._id, type: (fiche._type ? 'movie' : 'serie') })">
-            <img ng-src="{{ file.posterHref }}" alt="" height="150"/>
-        </a>
-    </div>
+    <div ng-init="id = file._id; type = (file._type ? 'movie' : 'serie'); src = file.posterHref; title = file.title"
+         ng-repeat="file in files" ng-include="'app/thumbnails/thumbnails.html'" class="thumbFiche"></div>
 </div>
+<div class="clear"></div>

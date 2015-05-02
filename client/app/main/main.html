@@ -2,62 +2,12 @@
     <div id="header">
         <h1><a ui-sref="main.accueil">Cubo Media</a></h1>
 
-        <div id="search">
-            <input type="text" name="q" placeholder="Rechercher..." autocomplete="off"
-                   ng-keyup="search()"
-                   ng-model="q" id="inputSearch" ng-click="forceClose = false"/>
-            <div class="ajax-spinner" ng-show="searchInProgress"></div>
+        <div id="search" ng-include="'app/searchBox/searchBox.html'"></div>
 
-            <div class="results" ng-show="q.length > 1 && !forceClose" click-outside="closeResults()" outside-if-not="inputSearch" id="searchResults">
-                <a ng-repeat="fiche in resultsFiles" ui-sref="main.fiche({ id: fiche._id, type: (fiche._type ? 'movie' : 'serie') })" class="link">
-                    <span class="title">{{ fiche.title }}</span>
-                    <span class="year">{{ fiche.productionYear }}</span>
-                    <div class="clear"></div>
-                </a>
-
-                <div class="link zero-results" ng-show="!resultsFiles.length && !searchInProgress">
-                    Aucun résultats :-(
-                </div>
-            </div>
-
-        </div>
         <div class="clear"></div>
     </div>
     <div id="content">
-        <div id="menuPrincipal">
-            <div id="menuFiches">
-                <a ng-repeat="fiche in fiches" ui-sref="main.fiche({ id: fiche._id })" ui-sref-active="active">{{
-                    fiche.title }}</a>
-            </div>
-
-            <div id="menuCategories">
-                <a ui-sref="main.categorie({ category: 'movie' })" ui-sref-active="active">Films <span>[{{ nbMovies }}]</span></a>
-                <a ui-sref="main.categorie({ category: 'serie' })" ui-sref-active="active">Séries <span>[{{ nbSeries }}]</span></a>
-            <!--<a href="">Fredon <span>[9]</span></a>-->
-            <!--<a href="">Tony <span>[16]</span></a>-->
-            <!--<a href="">damibironn <span>[13]</span></a>-->
-            <!--<a href="">yann <span>[0]</span></a>-->
-            <!--<a href="">PleoX <span>[38]</span></a>-->
-            <!--<a href="">achille <span>[11]</span></a>-->
-            <!--<a href="">bglacial <span>[6]</span></a>-->
-            <!--<a href="">tuxor <span>[3]</span></a>-->
-            </div>
-            <!--<div id="menuCategories">-->
-            <!--<a ng-repeat="categorie in categories" ui-sref="main.categorie({ id: categorie.id })">{{ categorie.nom }} <span>[{{ categorie.nbItems }}]</span></a>-->
-
-            <!--<a ui-sref="main.categorie({ id: 1 })">Films 1080p <span>[9]</span></a>-->
-            <!--<a ui-sref="main.categorie({ id: 2 })">Films 720p <span>[16]</span></a>-->
-            <!--<a ui-sref="main.categorie({ id: 3 })">Fims DivX <span>[13]</span></a>-->
-            <!--<a ui-sref="main.categorie({ id: 4 })">Documentaires <span>[0]</span></a>-->
-            <!--<a ui-sref="main.categorie({ id: 5 })">Séries <span>[38]</span></a>-->
-            <!--<a ui-sref="main.categorie({ id: 6 })">Musiques <span>[11]</span></a>-->
-            <!--<a ui-sref="main.categorie({ id: 7 })">Jeux PC <span>[6]</span></a>-->
-            <!--<a ui-sref="main.categorie({ id: 8 })">Jeux Xbox <span>[3]</span></a>-->
-            <!--<a ui-sref="main.categorie({ id: 9 })">Jeux PS3 <span>[1]</span></a>-->
-            <!--<a ui-sref="main.categorie({ id: 10 })">Logiciels <span>[2]</span></a>-->
-            <!--<a ui-sref="main.categorie({ id: 0 })">Divers / Non indexés <span>[4]</span></a>-->
-            <!--</div>-->
-        </div>
+        <div id="menuPrincipal" ng-include="'app/menu/menu.html'"></div>
 
         <div id="pageContent">
             <div ui-view="" id="blocRight">

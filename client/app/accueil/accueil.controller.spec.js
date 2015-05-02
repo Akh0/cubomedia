@@ -16,6 +16,7 @@ describe('Controller: AccueilCtrl', function () {
   }));
 
   it('should ...', function () {
+      expect(scope.films.length).toBeGreaterThan(0);
     expect(1).toEqual(1);
   });
 });

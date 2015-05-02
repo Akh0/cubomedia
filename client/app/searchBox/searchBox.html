@@ -1,0 +1,23 @@
+<div ng-controller="SearchBoxCtrl" class="search-box">
+    <input type="text" name="q" placeholder="Rechercher..." autocomplete="off"
+           ng-keyup="search()"
+           ng-model="q" id="inputSearch" ng-click="forceClose = false"/>
+
+    <div class="ajax-spinner" ng-show="searchInProgress"></div>
+
+    <div class="results" ng-show="q.length > 1 && !forceClose" click-outside="closeResults()"
+         outside-if-not="inputSearch"
+         id="searchResults">
+        <a ng-repeat="fiche in resultsFiles"
+           ui-sref="main.fiche({ id: fiche._id, type: (fiche._type ? 'movie' : 'serie') })" class="link">
+            <span class="title">{{ fiche.title }}</span>
+            <span class="year">{{ fiche.productionYear }}</span>
+
+            <div class="clear"></div>
+        </a>
+
+        <div class="link zero-results" ng-show="!resultsFiles.length && !searchInProgress">
+            Aucun résultats :-(
+        </div>
+    </div>
+</div>

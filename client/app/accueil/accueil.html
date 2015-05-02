@@ -1,21 +1,15 @@
 <div class="homeSection">
     <h2><a ui-sref="main.categorie({ category: 'movie' })">Films</a></h2>
 
-    <div ng-repeat="film in films" class="thumbFiche">
-        <a ui-sref="main.fiche({ id: film._id, type: 'movie' })">
-            <img ng-src="{{ film.posterHref }}" alt="" height="150"/>
-        </a>
-    </div>
+    <div ng-init="id = film._id; type = 'movie'; src = film.posterHref; title = film.title" ng-repeat="film in films"
+         ng-include="'app/thumbnails/thumbnails.html'" class="thumbFiche"></div>
 </div>
 
 <div class="homeSection">
     <h2><a ui-sref="main.categorie({ category: 'serie' })">Séries</a></h2>
 
-    <div ng-repeat="serie in series" class="thumbFiche">
-        <a ui-sref="main.fiche({ id: serie._id, type: 'serie' })">
-            <img ng-src="{{ serie.posterHref }}" alt="" height="150"/>
-        </a>
-    </div>
+    <div ng-init="id = serie._id; type = 'serie'; src = serie.posterHref; title = serie.title" ng-repeat="serie in series"
+         ng-include="'app/thumbnails/thumbnails.html'" class="thumbFiche"></div>
 </div>
 
 <div class="clear"></div>
